@@ -1,9 +1,9 @@
 appId: top.z-tools
-productName: ZTools
+productName: Kwik
 publish:
   provider: github
   owner: ZTRepo
-  repo: ZTools
+  repo: Kwik
 directories:
   buildResources: build
 files:
@@ -41,8 +41,8 @@ fileAssociations:
     role: Viewer
 win:
   compression: maximum
-  executableName: ZTools
-  artifactName: ${name}-${version}-${os}-${arch}.${ext}
+  executableName: Kwik
+  artifactName: Kwik-${version}-${os}-${arch}.${ext}
   target:
     - target: nsis
       arch:
@@ -51,7 +51,7 @@ win:
       arch:
         - x64
 nsis:
-  artifactName: ${name}-${version}-${os}-${arch}-setup.${ext}
+  artifactName: Kwik-${version}-${os}-${arch}-setup.${ext}
   include: build/installer.nsh
   shortcutName: ${productName}
   uninstallDisplayName: ${productName}
@@ -76,9 +76,9 @@ mac:
   target:
     - dmg
     - zip
-  artifactName: ${name}-${version}-${os}-${arch}.${ext}
+  artifactName: Kwik-${version}-${os}-${arch}.${ext}
 dmg:
-  artifactName: ${name}-${version}-${os}-${arch}.${ext}
+  artifactName: Kwik-${version}-${os}-${arch}.${ext}
 linux:
   target:
     - AppImage
@@ -86,7 +86,7 @@ linux:
   maintainer: electronjs.org
   category: Utility
 appImage:
-  artifactName: ${name}-${version}-${os}-${arch}.${ext}
+  artifactName: Kwik-${version}-${os}-${arch}.${ext}
 npmRebuild: false
 
 afterPack: ./build/afterPack.js

@@ -101,8 +101,8 @@ export async function getMacInstallCompatibility(): Promise<MacInstallCompatibil
     const updateConfig = yaml.parse(await fs.readFile(updateConfigPath, 'utf8'))
     hasUpdateConfig =
       updateConfig?.provider === 'github' &&
-      updateConfig?.owner === 'ZToolsCenter' &&
-      updateConfig?.repo === 'ZTools'
+      updateConfig?.owner === 'ZTRepo' &&
+      updateConfig?.repo === 'Kwik'
   } catch {
     hasUpdateConfig = false
   }
