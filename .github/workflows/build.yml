@@ -39,8 +39,8 @@ jobs:
             build_cmd: pnpm run build:mac:x64
             # electron-builder expects the certificate subject without its type prefix.
             signing_identity: ''
-          # macOS ARM64 (Apple Silicon) — macos-14 runner 已于 2026-11 退役
-          - os: macos-15
+          # macOS ARM64 (Apple Silicon) — 用 macos-latest 自动跟随最新镜像，避免固定版本退役
+          - os: macos-latest
             arch: arm64
             build_cmd: pnpm run build:mac:arm64
             signing_identity: ''
@@ -247,7 +247,7 @@ jobs:
       - name: Download macOS ARM64 artifact
         uses: actions/download-artifact@v4
         with:
-          name: artifact-macos-15-arm64
+          name: artifact-macos-latest-arm64
           path: dist/mac-arm64
 
       - name: Download Windows artifact
